@@ -1,0 +1,30 @@
+rails new proyecto_inicio_sesion
+rails generate model User first_name:string last_name:string email_address:string age:integer
+rails db:migrate
+rails c
+user1 = User.new(first_name:"Pepe", last_name:"Manriquez", emai
+l_address:"pepe@manriquez.cl", age:55)
+user1.save
+user1 = User.new(first_name:"Maria", last_name:"Gomez", email_a
+ddress:"maria@gomez.cl", age:35)
+user1.save
+user1 = User.new(first_name:"Juan", last_name:"Gomez", email_ad
+dress:"juan@gomez.cl", age:45)
+user1.save
+user1 = User.new()
+user1.valid?
+user1.errors
+user1.errors.full_messages
+user2 = User.new(last_name:"Gomez", email_ad
+dress:77744444, age:1)
+user2.errors.full_messages
+User.all
+User.find(1)
+User.last!
+User.order('first_name')
+user3 = User.find(3)
+user3.last_name = "Ordon"
+user3.save
+user4 = User.find(4)
+user4.destroy
+
